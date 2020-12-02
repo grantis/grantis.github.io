@@ -1,16 +1,16 @@
-### Hi there 👋
+### Hi there, Im Grant 👋
 
-<!--
-**grantis/grantis** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## I'm a Full Stack Developer and Full Time Human!  
 
-Here are some ideas to get you started:
+- 🔭 I’m currently working on developing technologies to make General Aviation a safer place for everyone!
+- 🌱 I’m currently learning AWS Cloud Solutions Architecture. 
+- ⚡ Fun fact: I love listening to informative podcasts, messing with synths and drum machines and learning about how the world works. 
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### Connect with me: 
+
+[<img align="left" alt="Grant | Twitter" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitter.svg"/>](Twitter)
+
+<br/>
+
+### Languages and Tools:
+
