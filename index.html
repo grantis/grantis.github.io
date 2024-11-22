@@ -1,686 +1,1027 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Grant Rigby - Software Engineer Resume</title><style>
-/* cspell:disable-file */
-/* webkit printing magic: print all background colors */
-html {
-	-webkit-print-color-adjust: exact;
-}
-* {
-	box-sizing: border-box;
-	-webkit-print-color-adjust: exact;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
-	}
-}
-
-body {
-	line-height: 1.5;
-	white-space: pre-wrap;
-}
-
-a,
-a.visited {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.pdf-relative-link-path {
-	font-size: 80%;
-	color: #444;
-}
-
-h1,
-h2,
-h3 {
-	letter-spacing: -0.01em;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.page-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 0.75em;
-}
-
-h1 {
-	font-size: 1.875rem;
-	margin-top: 1.875rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-h3 {
-	font-size: 1.25rem;
-	margin-top: 1.25rem;
-}
-
-.source {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 1.5em;
-	word-break: break-all;
-}
-
-.callout {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
-figure {
-	margin: 1.25em 0;
-	page-break-inside: avoid;
-}
-
-figcaption {
-	opacity: 0.5;
-	font-size: 85%;
-	margin-top: 0.5em;
-}
-
-mark {
-	background-color: transparent;
-}
-
-.indented {
-	padding-left: 1.5em;
-}
-
-hr {
-	background: transparent;
-	display: block;
-	width: 100%;
-	height: 1px;
-	visibility: visible;
-	border: none;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-img {
-	max-width: 100%;
-}
-
-@media only print {
-	img {
-		max-height: 100vh;
-		object-fit: contain;
-	}
-}
-
-@page {
-	margin: 1in;
-}
-
-.collection-content {
-	font-size: 0.875rem;
-}
-
-.column-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.column {
-	padding: 0 1em;
-}
-
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
-}
-
-.table_of_contents-item {
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.3;
-	padding: 0.125rem;
-}
-
-.table_of_contents-indent-1 {
-	margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-	margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-	margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-	text-decoration: none;
-	opacity: 0.7;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
-
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
-
-table {
-	border-left: none;
-	border-right: none;
-}
-
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-th {
-	color: rgba(55, 53, 47, 0.6);
-}
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
-
-ul.to-do-list {
-	padding-inline-start: 0;
-}
-
-ul.to-do-list > li {
-	list-style: none;
-}
-
-.to-do-children-checked {
-	text-decoration: line-through;
-	opacity: 0.375;
-}
-
-ul.toggle > li {
-	list-style: none;
-}
-
-ul {
-	padding-inline-start: 1.7em;
-}
-
-ul > li {
-	padding-left: 0.1em;
-}
-
-ol {
-	padding-inline-start: 1.6em;
-}
-
-ol > li {
-	padding-left: 0.2em;
-}
-
-.mono ol {
-	padding-inline-start: 2em;
-}
-
-.mono ol > li {
-	text-indent: -0.4em;
-}
-
-.toggle {
-	padding-inline-start: 0em;
-	list-style-type: none;
-}
-
-/* Indent toggle children */
-.toggle > li > details {
-	padding-left: 1.7em;
-}
-
-.toggle > li > details > summary {
-	margin-left: -1.1em;
-}
-
-.selected-value {
-	display: inline-block;
-	padding: 0 0.5em;
-	background: rgba(206, 205, 202, 0.5);
-	border-radius: 3px;
-	margin-right: 0.5em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-	white-space: nowrap;
-}
-
-.collection-title {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-.page-description {
-    margin-bottom: 2em;
-}
-
-.simple-table {
-	margin-top: 1em;
-	font-size: 0.875rem;
-	empty-cells: show;
-}
-.simple-table td {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table th {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table-header-color {
-	background: rgb(247, 246, 243);
-	color: black;
-}
-.simple-table-header {
-	font-weight: 500;
-}
-
-time {
-	opacity: 0.5;
-}
-
-.icon {
-	display: inline-block;
-	max-width: 1.2em;
-	max-height: 1.2em;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	margin-right: 0.5em;
-}
-
-img.icon {
-	border-radius: 3px;
-}
-
-.user-icon {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 100%;
-	margin-right: 0.5rem;
-}
-
-.user-icon-inner {
-	font-size: 0.8em;
-}
-
-.text-icon {
-	border: 1px solid #000;
-	text-align: center;
-}
-
-.page-cover-image {
-	display: block;
-	object-fit: cover;
-	width: 100%;
-	max-height: 30vh;
-}
-
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-}
-
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
-}
-
-.link-to-page {
-	margin: 1em 0;
-	padding: 0;
-	border: none;
-	font-weight: 500;
-}
-
-p > .user {
-	opacity: 0.5;
-}
-
-td > .user,
-td > time {
-	white-space: nowrap;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
-	vertical-align: middle;
-}
-
-p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.image {
-	border: none;
-	margin: 1.5em 0;
-	padding: 0;
-	border-radius: 0;
-	text-align: center;
-}
-
-.code,
-code {
-	background: rgba(135, 131, 120, 0.15);
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
-	border-radius: 3px;
-	font-size: 85%;
-	tab-size: 2;
-}
-
-code {
-	color: #eb5757;
-}
-
-.code {
-	padding: 1.5em 1em;
-}
-
-.code-wrap {
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.code > code {
-	background: none;
-	padding: 0;
-	font-size: 100%;
-	color: inherit;
-}
-
-blockquote {
-	font-size: 1.25em;
-	margin: 1em 0;
-	padding-left: 1em;
-	border-left: 3px solid rgb(55, 53, 47);
-}
-
-.bookmark {
-	text-decoration: none;
-	max-height: 8em;
-	padding: 0;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
-
-.bookmark-title {
-	font-size: 0.85em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 1.75em;
-	white-space: nowrap;
-}
-
-.bookmark-text {
-	display: flex;
-	flex-direction: column;
-}
-
-.bookmark-info {
-	flex: 4 1 180px;
-	padding: 12px 14px 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.bookmark-image {
-	width: 33%;
-	flex: 1 1 180px;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	border-radius: 1px;
-}
-
-.bookmark-description {
-	color: rgba(55, 53, 47, 0.6);
-	font-size: 0.75em;
-	overflow: hidden;
-	max-height: 4.5em;
-	word-break: break-word;
-}
-
-.bookmark-href {
-	font-size: 0.75em;
-	margin-top: 0.25em;
-}
-
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
-.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
-.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
-.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
-.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.highlight-default {
-	color: rgba(55, 53, 47, 1);
-}
-.highlight-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.highlight-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.highlight-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.highlight-default_background {
-	color: rgba(55, 53, 47, 1);
-}
-.highlight-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.highlight-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.highlight-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.highlight-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.highlight-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.block-color-default {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.block-color-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.block-color-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.block-color-default_background {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.block-color-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.block-color-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.block-color-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.block-color-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
-.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
-.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
-.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
-.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
-.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
-.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
-.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
-.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
-.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
-.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
-.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
-.select-value-color-pageGlass { background-color: undefined; }
-.select-value-color-washGlass { background-color: undefined; }
-
-.checkbox {
-	display: inline-flex;
-	vertical-align: text-bottom;
-	width: 16;
-	height: 16;
-	background-size: 16px;
-	margin-left: 2px;
-	margin-right: 5px;
-}
-
-.checkbox-on {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.checkbox-off {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-	
-</style></head><body><article id="44c38832-6083-4abd-8649-75926b94c9ab" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1485740112426-0c2549fa8c86?ixlib=rb-4.0.3&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb" style="object-position:center 55.99000000000001%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🖥️</span></div><h1 class="page-title">Grant Rigby - Software Engineer Resume</h1><p class="page-description"></p></header><div class="page-body"><blockquote id="3fb234b9-df10-4b44-97c5-2639a944beba" class=""><mark class="highlight-teal_background">“</mark><em><mark class="highlight-teal_background">The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.</mark></em><mark class="highlight-teal_background">” - </mark><mark class="highlight-teal_background"><strong>Marcel Proust</strong></mark></blockquote><h2 id="146d723f-2a4c-808b-a37e-fbcd8667bef3" class="">Summary</h2><p id="146d723f-2a4c-8060-abc3-ec42ec20bd76" class="">Dedicated Full-Stack Developer with a strong foundation in frontend technologies (React, Vue, Svelte) and backend development (Python, Node.js). Proven experience in designing, developing, and deploying robust web applications. Passionate about crafting user-friendly interfaces and optimising performance. Proficient in AWS services, CI/CD pipelines, and security best practices.</p><hr id="146d723f-2a4c-801e-a68e-e2be9be10e53"/><h3 id="146d723f-2a4c-80c5-b62c-c12a332e9059" class="">AWS &amp; INFRASTRUCTURE EXPERIENCE</h3><ul id="146d723f-2a4c-80fa-ab8d-ee18c6786ce4" class="bulleted-list"><li style="list-style-type:disc">AWS Infrastructure as Code with CloudFormation templates</li></ul><ul id="146d723f-2a4c-800e-ad61-e31c8857e281" class="bulleted-list"><li style="list-style-type:disc">CI/CD pipeline implementation using CodeBuild and CodePipeline</li></ul><ul id="146d723f-2a4c-80dd-8b30-e949b2edfa9a" class="bulleted-list"><li style="list-style-type:disc">Lambda function configuration and deployment</li></ul><ul id="146d723f-2a4c-80b3-9b13-d673c80745b2" class="bulleted-list"><li style="list-style-type:disc">Experience with both REST and HTTP APIs (API Gateway v1 and v2)</li></ul><ul id="146d723f-2a4c-80e1-aac9-ce35dd1eb481" class="bulleted-list"><li style="list-style-type:disc">Custom domain and SSL/TLS certificate management</li></ul><ul id="146d723f-2a4c-806f-83f8-f54959693ae1" class="bulleted-list"><li style="list-style-type:disc">S3 bucket configuration and management</li></ul><ul id="146d723f-2a4c-80e8-b66b-e04aed414ae1" class="bulleted-list"><li style="list-style-type:disc">CloudFront distribution setup and invalidation</li></ul><ul id="146d723f-2a4c-8049-b937-cac148367f9a" class="bulleted-list"><li style="list-style-type:disc">ECS container service management</li></ul><ul id="146d723f-2a4c-808e-aae6-fe4a520f5582" class="bulleted-list"><li style="list-style-type:disc">ECR repository management</li></ul><h3 id="146d723f-2a4c-8031-842f-ee76982da92c" class="">SECURITY &amp; ACCESS MANAGEMENT</h3><ul id="146d723f-2a4c-8081-8d32-f46ea9c54bde" class="bulleted-list"><li style="list-style-type:disc">IAM roles and policies implementation</li></ul><ul id="146d723f-2a4c-807c-9db5-c4408b28f977" class="bulleted-list"><li style="list-style-type:disc">KMS encryption for sensitive data</li></ul><ul id="146d723f-2a4c-8083-a995-c882995e2f09" class="bulleted-list"><li style="list-style-type:disc">Secure parameter storage in AWS SSM</li></ul><ul id="146d723f-2a4c-805b-89a5-e786e7188b00" class="bulleted-list"><li style="list-style-type:disc">Security policy configuration for APIs</li></ul><ul id="146d723f-2a4c-80e9-8da7-e7a2f79374b8" class="bulleted-list"><li style="list-style-type:disc">WAFv2 configuration and management</li></ul><ul id="146d723f-2a4c-8055-8ea4-c08bdcca2594" class="bulleted-list"><li style="list-style-type:disc">Implementation of secure token handling</li></ul><ul id="146d723f-2a4c-803b-8b65-fbccf1e22480" class="bulleted-list"><li style="list-style-type:disc">SSL/TLS security policy management</li></ul><h3 id="146d723f-2a4c-8033-9ac5-e62043e46393" class="">CI/CD &amp; AUTOMATION</h3><ul id="146d723f-2a4c-802e-89fc-ec00f00c3e76" class="bulleted-list"><li style="list-style-type:disc">GitHub web hook integration</li></ul><ul id="146d723f-2a4c-80c7-95f1-d4ccfc1e4ca7" class="bulleted-list"><li style="list-style-type:disc">Docker build environment configuration</li></ul><ul id="146d723f-2a4c-802b-9cb6-f4c57b6cb3b3" class="bulleted-list"><li style="list-style-type:disc">Slack notification integration for build status</li></ul><ul id="146d723f-2a4c-8049-a7f7-d32d8b0c2f13" class="bulleted-list"><li style="list-style-type:disc">Automated deployment pipelines</li></ul><ul id="146d723f-2a4c-8018-98dc-de5813654195" class="bulleted-list"><li style="list-style-type:disc">Build and deployment artifact management</li></ul><ul id="146d723f-2a4c-800d-9d43-dffef187a3eb" class="bulleted-list"><li style="list-style-type:disc">Multi-environment deployment strategies</li></ul><ul id="146d723f-2a4c-80de-ad2a-fb315448eca6" class="bulleted-list"><li style="list-style-type:disc">Continuous integration testing setup</li></ul><h3 id="146d723f-2a4c-80b0-b6a0-ee4e39368311" class="">FRONTEND DEVELOPMENT</h3><ul id="146d723f-2a4c-8096-8894-c26be343d6fa" class="bulleted-list"><li style="list-style-type:disc">Responsive design implementation</li></ul><ul id="146d723f-2a4c-80ad-80ee-da00a081461d" class="bulleted-list"><li style="list-style-type:disc">CSS architecture and organisation</li></ul><ul id="146d723f-2a4c-80b7-9dbf-c66e82b4eb70" class="bulleted-list"><li style="list-style-type:disc">Cross-browser compatibility handling</li></ul><ul id="146d723f-2a4c-8006-a9b1-e81a6372bcaa" class="bulleted-list"><li style="list-style-type:disc">Modern CSS features and fallbacks</li></ul><ul id="146d723f-2a4c-8096-9cf4-dc985ffd9da9" class="bulleted-list"><li style="list-style-type:disc">Aspect ratio management for responsive elements</li></ul><ul id="146d723f-2a4c-80ac-bdef-eeff761ea656" class="bulleted-list"><li style="list-style-type:disc">Accessibility considerations in frontend code</li></ul><ul id="146d723f-2a4c-804e-9cbc-d1605a7b36aa" class="bulleted-list"><li style="list-style-type:disc">Asset optimization and management</li></ul><ul id="146d723f-2a4c-80cb-b674-cc07df3b6277" class="bulleted-list"><li style="list-style-type:disc">React, Angular, Vue, Svelte</li></ul><h3 id="146d723f-2a4c-80ca-a125-ed2d6c9a7452" class="">DEVELOPMENT TOOLS &amp; ENVIRONMENT</h3><ul id="146d723f-2a4c-8009-8456-f3bed0e76f60" class="bulleted-list"><li style="list-style-type:disc">Python dependency management</li></ul><ul id="146d723f-2a4c-8046-ac61-f4e4b566d008" class="bulleted-list"><li style="list-style-type:disc">Node.js package management</li></ul><ul id="146d723f-2a4c-8097-a0b2-f49fde72cc4b" class="bulleted-list"><li style="list-style-type:disc">Complex dependency tree handling</li></ul><ul id="146d723f-2a4c-80bd-871e-c5602e5f72d9" class="bulleted-list"><li style="list-style-type:disc">Version control with Git</li></ul><ul id="146d723f-2a4c-80b8-9e32-deca65c8328c" class="bulleted-list"><li style="list-style-type:disc">Environment configuration management</li></ul><ul id="146d723f-2a4c-808e-84c6-c641fb5db21b" class="bulleted-list"><li style="list-style-type:disc">Cross-platform development considerations</li></ul><ul id="146d723f-2a4c-8088-bc39-ccb82986bab6" class="bulleted-list"><li style="list-style-type:disc">Build tool configuration</li></ul><h3 id="146d723f-2a4c-807c-bec8-d69b9c06f000" class=""><strong>TECHNICAL SKILLS</strong></h3><table id="146d723f-2a4c-80a1-ad3f-c3e20a8903f6" class="simple-table"><thead class="simple-table-header"><tr id="3b0e42cd-3eba-40e1-aa60-62e2745993e5"><th id="}lQM" class="simple-table-header-color simple-table-header" style="width:345px"><strong>Category</strong></th><th id="]D&gt;`" class="simple-table-header-color simple-table-header" style="width:345px"><strong>Skills</strong></th></tr></thead><tbody><tr id="c03878b0-cd6a-4463-96a0-db537ece4d74"><td id="}lQM" class="" style="width:345px"><strong>AWS Services</strong></td><td id="]D&gt;`" class="" style="width:345px">CodeBuild, CodePipeline, Lambda, API Gateway, IAM, KMS, SSM, CloudFront, S3, ECS, ECR, WAFv2</td></tr><tr id="ae45e4b8-7ce8-4996-af65-e901e17684ef"><td id="}lQM" class="" style="width:345px"><strong>Infrastructure &amp; DevOps</strong></td><td id="]D&gt;`" class="" style="width:345px">CloudFormation, Docker, CI/CD Pipelines, Infrastructure as Code, Security Implementation, SSL/TLS Management</td></tr><tr id="5900394c-dc7f-4d4e-8147-eafb3b938465"><td id="}lQM" class="" style="width:345px"><strong>Frontend</strong></td><td id="]D&gt;`" class="" style="width:345px">CSS/SCSS, Responsive Design, Cross-browser Support, Frontend Build Tools, Frontend Security</td></tr><tr id="f6e0e8ea-aa3c-4ce9-b3f8-3dfcb9389745"><td id="}lQM" class="" style="width:345px"><strong>Development</strong></td><td id="]D&gt;`" class="" style="width:345px">Python, Node.js, Package Management, Version Control, Environment Configuration</td></tr></tbody></table><hr id="146d723f-2a4c-8083-a171-d8de87399820"/><h3 id="146d723f-2a4c-801b-b4f5-d3b3309ef05d" class="">Software Development Work History</h3><ul id="146d723f-2a4c-80a3-a89c-cb850ce9fbe1" class="bulleted-list"><li style="list-style-type:disc">Full-stack Developer at <a href="https://movember.com/">Movember </a> <em>[May-2022, present]</em></li></ul><ul id="146d723f-2a4c-800f-adf7-e30d055b8eaa" class="bulleted-list"><li style="list-style-type:disc">Software Engineer at <a href="https://www.spidertracks.com/">Spidertracks</a>  <em>[Aug-2019, Mar-2022]</em></li></ul><p id="146d723f-2a4c-807d-ba69-e333abf522dd" class="">
-</p><p id="82c7ae84-6b0e-419f-a177-4fabfc60ed0c" class="">
-</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Grant Rigby - Software Engineer Resume</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-default_background {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-default_background {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-uiBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-transparentGray {
+			background-color: rgba(227, 226, 224, 0);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(0, 0, 0, 0.06);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="44c38832-6083-4abd-8649-75926b94c9ab" class="page sans">
+		<header><img class="page-cover-image"
+				src="https://images.unsplash.com/photo-1485740112426-0c2549fa8c86?ixlib=rb-4.0.3&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb"
+				style="object-position:center 55.99000000000001%" />
+			<div class="page-header-icon page-header-icon-with-cover"><span class="icon">🖥️</span></div>
+			<h1 class="page-title">Grant Rigby - Software Engineer Resume</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<blockquote id="3fb234b9-df10-4b44-97c5-2639a944beba" class=""><mark
+					class="highlight-teal_background">“</mark><em><mark class="highlight-teal_background">The real voyage of
+						discovery consists not in seeking new landscapes, but in having new eyes.</mark></em><mark
+					class="highlight-teal_background">” - </mark><mark class="highlight-teal_background"><strong>Marcel
+						Proust</strong></mark></blockquote>
+			<h2 id="146d723f-2a4c-808b-a37e-fbcd8667bef3" class="">Summary</h2>
+			<p id="146d723f-2a4c-8060-abc3-ec42ec20bd76" class="">Dedicated Full-Stack Developer with a strong foundation in
+				frontend technologies (React, Vue, Svelte) and backend development (Python, Node.js). Proven experience in
+				designing, developing, and deploying robust web applications. Passionate about crafting user-friendly interfaces
+				and optimising performance. Proficient in AWS services, CI/CD pipelines, and security best practices.</p>
+			<hr id="146d723f-2a4c-801e-a68e-e2be9be10e53" />
+			<h3 id="146d723f-2a4c-80c5-b62c-c12a332e9059" class="">AWS &amp; INFRASTRUCTURE EXPERIENCE</h3>
+			<ul id="146d723f-2a4c-80fa-ab8d-ee18c6786ce4" class="bulleted-list">
+				<li style="list-style-type:disc">AWS Infrastructure as Code with CloudFormation templates</li>
+			</ul>
+			<ul id="146d723f-2a4c-800e-ad61-e31c8857e281" class="bulleted-list">
+				<li style="list-style-type:disc">CI/CD pipeline implementation using CodeBuild and CodePipeline</li>
+			</ul>
+			<ul id="146d723f-2a4c-80dd-8b30-e949b2edfa9a" class="bulleted-list">
+				<li style="list-style-type:disc">Lambda function configuration and deployment</li>
+			</ul>
+			<ul id="146d723f-2a4c-80b3-9b13-d673c80745b2" class="bulleted-list">
+				<li style="list-style-type:disc">Experience with both REST and HTTP APIs (API Gateway v1 and v2)</li>
+			</ul>
+			<ul id="146d723f-2a4c-80e1-aac9-ce35dd1eb481" class="bulleted-list">
+				<li style="list-style-type:disc">Custom domain and SSL/TLS certificate management</li>
+			</ul>
+			<ul id="146d723f-2a4c-806f-83f8-f54959693ae1" class="bulleted-list">
+				<li style="list-style-type:disc">S3 bucket configuration and management</li>
+			</ul>
+			<ul id="146d723f-2a4c-80e8-b66b-e04aed414ae1" class="bulleted-list">
+				<li style="list-style-type:disc">CloudFront distribution setup and invalidation</li>
+			</ul>
+			<ul id="146d723f-2a4c-8049-b937-cac148367f9a" class="bulleted-list">
+				<li style="list-style-type:disc">ECS container service management</li>
+			</ul>
+			<ul id="146d723f-2a4c-808e-aae6-fe4a520f5582" class="bulleted-list">
+				<li style="list-style-type:disc">ECR repository management</li>
+			</ul>
+			<h3 id="146d723f-2a4c-8031-842f-ee76982da92c" class="">SECURITY &amp; ACCESS MANAGEMENT</h3>
+			<ul id="146d723f-2a4c-8081-8d32-f46ea9c54bde" class="bulleted-list">
+				<li style="list-style-type:disc">IAM roles and policies implementation</li>
+			</ul>
+			<ul id="146d723f-2a4c-807c-9db5-c4408b28f977" class="bulleted-list">
+				<li style="list-style-type:disc">KMS encryption for sensitive data</li>
+			</ul>
+			<ul id="146d723f-2a4c-8083-a995-c882995e2f09" class="bulleted-list">
+				<li style="list-style-type:disc">Secure parameter storage in AWS SSM</li>
+			</ul>
+			<ul id="146d723f-2a4c-805b-89a5-e786e7188b00" class="bulleted-list">
+				<li style="list-style-type:disc">Security policy configuration for APIs</li>
+			</ul>
+			<ul id="146d723f-2a4c-80e9-8da7-e7a2f79374b8" class="bulleted-list">
+				<li style="list-style-type:disc">WAFv2 configuration and management</li>
+			</ul>
+			<ul id="146d723f-2a4c-8055-8ea4-c08bdcca2594" class="bulleted-list">
+				<li style="list-style-type:disc">Implementation of secure token handling</li>
+			</ul>
+			<ul id="146d723f-2a4c-803b-8b65-fbccf1e22480" class="bulleted-list">
+				<li style="list-style-type:disc">SSL/TLS security policy management</li>
+			</ul>
+			<h3 id="146d723f-2a4c-8033-9ac5-e62043e46393" class="">CI/CD &amp; AUTOMATION</h3>
+			<ul id="146d723f-2a4c-802e-89fc-ec00f00c3e76" class="bulleted-list">
+				<li style="list-style-type:disc">GitHub web hook integration</li>
+			</ul>
+			<ul id="146d723f-2a4c-80c7-95f1-d4ccfc1e4ca7" class="bulleted-list">
+				<li style="list-style-type:disc">Docker build environment configuration</li>
+			</ul>
+			<ul id="146d723f-2a4c-802b-9cb6-f4c57b6cb3b3" class="bulleted-list">
+				<li style="list-style-type:disc">Slack notification integration for build status</li>
+			</ul>
+			<ul id="146d723f-2a4c-8049-a7f7-d32d8b0c2f13" class="bulleted-list">
+				<li style="list-style-type:disc">Automated deployment pipelines</li>
+			</ul>
+			<ul id="146d723f-2a4c-8018-98dc-de5813654195" class="bulleted-list">
+				<li style="list-style-type:disc">Build and deployment artifact management</li>
+			</ul>
+			<ul id="146d723f-2a4c-800d-9d43-dffef187a3eb" class="bulleted-list">
+				<li style="list-style-type:disc">Multi-environment deployment strategies</li>
+			</ul>
+			<ul id="146d723f-2a4c-80de-ad2a-fb315448eca6" class="bulleted-list">
+				<li style="list-style-type:disc">Continuous integration testing setup</li>
+			</ul>
+			<h3 id="146d723f-2a4c-80b0-b6a0-ee4e39368311" class="">FRONTEND DEVELOPMENT</h3>
+			<ul id="146d723f-2a4c-8096-8894-c26be343d6fa" class="bulleted-list">
+				<li style="list-style-type:disc">Responsive design implementation</li>
+			</ul>
+			<ul id="146d723f-2a4c-80ad-80ee-da00a081461d" class="bulleted-list">
+				<li style="list-style-type:disc">CSS architecture and organisation</li>
+			</ul>
+			<ul id="146d723f-2a4c-80b7-9dbf-c66e82b4eb70" class="bulleted-list">
+				<li style="list-style-type:disc">Cross-browser compatibility handling</li>
+			</ul>
+			<ul id="146d723f-2a4c-8006-a9b1-e81a6372bcaa" class="bulleted-list">
+				<li style="list-style-type:disc">Modern CSS features and fallbacks</li>
+			</ul>
+			<ul id="146d723f-2a4c-8096-9cf4-dc985ffd9da9" class="bulleted-list">
+				<li style="list-style-type:disc">Aspect ratio management for responsive elements</li>
+			</ul>
+			<ul id="146d723f-2a4c-80ac-bdef-eeff761ea656" class="bulleted-list">
+				<li style="list-style-type:disc">Accessibility considerations in frontend code</li>
+			</ul>
+			<ul id="146d723f-2a4c-804e-9cbc-d1605a7b36aa" class="bulleted-list">
+				<li style="list-style-type:disc">Asset optimization and management</li>
+			</ul>
+			<ul id="146d723f-2a4c-80cb-b674-cc07df3b6277" class="bulleted-list">
+				<li style="list-style-type:disc">React, Angular, Vue, Svelte</li>
+			</ul>
+			<h3 id="146d723f-2a4c-80ca-a125-ed2d6c9a7452" class="">DEVELOPMENT TOOLS &amp; ENVIRONMENT</h3>
+			<ul id="146d723f-2a4c-8009-8456-f3bed0e76f60" class="bulleted-list">
+				<li style="list-style-type:disc">Python dependency management</li>
+			</ul>
+			<ul id="146d723f-2a4c-8046-ac61-f4e4b566d008" class="bulleted-list">
+				<li style="list-style-type:disc">Node.js package management</li>
+			</ul>
+			<ul id="146d723f-2a4c-8097-a0b2-f49fde72cc4b" class="bulleted-list">
+				<li style="list-style-type:disc">Complex dependency tree handling</li>
+			</ul>
+			<ul id="146d723f-2a4c-80bd-871e-c5602e5f72d9" class="bulleted-list">
+				<li style="list-style-type:disc">Version control with Git</li>
+			</ul>
+			<ul id="146d723f-2a4c-80b8-9e32-deca65c8328c" class="bulleted-list">
+				<li style="list-style-type:disc">Environment configuration management</li>
+			</ul>
+			<ul id="146d723f-2a4c-808e-84c6-c641fb5db21b" class="bulleted-list">
+				<li style="list-style-type:disc">Cross-platform development considerations</li>
+			</ul>
+			<ul id="146d723f-2a4c-8088-bc39-ccb82986bab6" class="bulleted-list">
+				<li style="list-style-type:disc">Build tool configuration</li>
+			</ul>
+			<h3 id="146d723f-2a4c-807c-bec8-d69b9c06f000" class=""><strong>TECHNICAL SKILLS</strong></h3>
+			<table id="146d723f-2a4c-80a1-ad3f-c3e20a8903f6" class="simple-table">
+				<thead class="simple-table-header">
+					<tr id="3b0e42cd-3eba-40e1-aa60-62e2745993e5">
+						<th id="}lQM" class="simple-table-header-color simple-table-header" style="width:345px">
+							<strong>Category</strong></th>
+						<th id="]D&gt;`" class="simple-table-header-color simple-table-header" style="width:345px">
+							<strong>Skills</strong></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr id="c03878b0-cd6a-4463-96a0-db537ece4d74">
+						<td id="}lQM" class="" style="width:345px"><strong>AWS Services</strong></td>
+						<td id="]D&gt;`" class="" style="width:345px">CodeBuild, CodePipeline, Lambda, API Gateway, IAM, KMS, SSM,
+							CloudFront, S3, ECS, ECR, WAFv2</td>
+					</tr>
+					<tr id="ae45e4b8-7ce8-4996-af65-e901e17684ef">
+						<td id="}lQM" class="" style="width:345px"><strong>Infrastructure &amp; DevOps</strong></td>
+						<td id="]D&gt;`" class="" style="width:345px">CloudFormation, Docker, CI/CD Pipelines, Infrastructure as
+							Code, Security Implementation, SSL/TLS Management</td>
+					</tr>
+					<tr id="5900394c-dc7f-4d4e-8147-eafb3b938465">
+						<td id="}lQM" class="" style="width:345px"><strong>Frontend</strong></td>
+						<td id="]D&gt;`" class="" style="width:345px">CSS/SCSS, Responsive Design, Cross-browser Support, Frontend
+							Build Tools, Frontend Security</td>
+					</tr>
+					<tr id="f6e0e8ea-aa3c-4ce9-b3f8-3dfcb9389745">
+						<td id="}lQM" class="" style="width:345px"><strong>Development</strong></td>
+						<td id="]D&gt;`" class="" style="width:345px">Python, Node.js, Package Management, Version Control,
+							Environment Configuration</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr id="146d723f-2a4c-8083-a171-d8de87399820" />
+			<h3 id="146d723f-2a4c-801b-b4f5-d3b3309ef05d" class="">Software Development Work History</h3>
+			<ul id="146d723f-2a4c-80a3-a89c-cb850ce9fbe1" class="bulleted-list">
+				<li style="list-style-type:disc">Full-stack Developer at <a href="https://movember.com/">Movember </a>
+					<em>[May-2022, present]</em></li>
+			</ul>
+			<ul id="146d723f-2a4c-800f-adf7-e30d055b8eaa" class="bulleted-list">
+				<li style="list-style-type:disc">Software Engineer at <a href="https://www.spidertracks.com/">Spidertracks</a>
+					<em>[Aug-2019, Mar-2022]</em></li>
+			</ul>
+			<p id="146d723f-2a4c-807d-ba69-e333abf522dd" class="">
+			</p>
+			<p id="82c7ae84-6b0e-419f-a177-4fabfc60ed0c" class="">
+			</p>
+		</div>
+	</article><span class="sans" style="font-size:14px;padding-top:2em"></span>
+</body>
+
+</html>
