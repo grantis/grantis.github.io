@@ -277,6 +277,10 @@
 	<script>
 	async function generatePDF() {
 		const element = document.querySelector('.page');
+		
+		// Add PDF class before generating
+		element.classList.add('generating-pdf');
+		
 		const opt = {
 			margin: [10, 10],
 			filename: 'grant-rigby-resume.pdf',
@@ -284,6 +288,8 @@
 			html2canvas: { 
 				scale: 2,
 				useCORS: true,
+				allowTaint: true,
+				foreignObjectRendering: true,
 				logging: true,
 				scrollY: -window.scrollY
 			},
@@ -304,6 +310,9 @@
 			// Generate and download PDF
 			await html2pdf().set(opt).from(element).save();
 
+			// Cleanup
+			element.classList.remove('generating-pdf');
+			
 			// Restore dark mode if it was active
 			if (isDarkMode) {
 				document.body.classList.add('dark-mode');
@@ -311,6 +320,7 @@
 		} catch (error) {
 			console.error('PDF generation failed:', error);
 			alert('Failed to generate PDF. Please try again.');
+			element.classList.remove('generating-pdf');
 		}
 	}
 	</script>
