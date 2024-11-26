@@ -563,3 +563,12 @@ h1, h2, h3,
         white-space: nowrap;
     }
 }
+
+/* PDF-specific styles */
+.generating-pdf .profile-image {
+    width: 60px !important;
+    height: 60px !important;
+    box-shadow: none !important;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+}
