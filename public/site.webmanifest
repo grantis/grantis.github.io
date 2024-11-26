@@ -1,0 +1,27 @@
+{
+    "name": "Grant Rigby - Software Engineer",
+    "short_name": "Grant Rigby",
+    "description": "Professional portfolio and resume of Grant Rigby, Software Engineer",
+    "icons": [
+        {
+            "src": "public/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "public/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "/",
+    "theme_color": "#f5f5f7",
+    "background_color": "#f5f5f7",
+    "display": "standalone",
+    "orientation": "portrait",
+    "categories": ["portfolio", "professional", "resume"],
+    "lang": "en-AU",
+    "prefer_related_applications": false
+}
