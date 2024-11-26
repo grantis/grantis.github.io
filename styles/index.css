@@ -114,23 +114,33 @@ h3 { font-size: 1.25rem; margin-top: 1.25rem; }
 
 .contact-section {
     flex: 1;
-    max-width: 450px;
+    width: 100%;
+    max-width: none;
 }
 
 .contact-section .simple-table {
     margin: 0;
     width: 100%;
+    table-layout: auto;
 }
 
 .simple-table th {
-    width: 30%;
-    padding-left: 1.5rem;
+    width: auto;
+    min-width: 80px;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    vertical-align: top;
+    font-weight: 500;
+    white-space: nowrap;
 }
 
 .simple-table td {
-    width: 70%;
-    padding-right: 1.5rem;
+    padding: 0.75rem 1rem;
     text-align: right;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .profile-image {
@@ -509,5 +519,47 @@ h1, h2, h3,
 @media print {
     .download-pdf {
         display: none !important;
+    }
+}
+
+/* Print-specific table styles */
+@media print {
+    .contact-section {
+        width: 100%;
+    }
+
+    .simple-table {
+        page-break-inside: avoid;
+        width: 100%;
+    }
+
+    .simple-table th,
+    .simple-table td {
+        padding: 0.5rem 1rem;
+        white-space: nowrap;
+    }
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+
+    .contact-section {
+        width: 100%;
+    }
+
+    .simple-table {
+        font-size: 0.85rem;
+    }
+
+    .simple-table th,
+    .simple-table td {
+        padding: 0.5rem;
+        white-space: nowrap;
     }
 }
