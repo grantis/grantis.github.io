@@ -106,7 +106,6 @@ h3 { font-size: 1.25rem; margin-top: 1.25rem; }
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-    border-radius: 12px;
 }
 
 .page-body > h2 {
