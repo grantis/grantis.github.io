@@ -276,22 +276,24 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 	<script>
 	async function generatePDF() {
-		const element = document.querySelector('.page');
-		
-		// Add PDF class before generating
+		const element = document.querySelector('article.page');
 		element.classList.add('generating-pdf');
 		
 		const opt = {
-			margin: [10, 10],
+			margin: 0,
 			filename: 'grant-rigby-resume.pdf',
-			image: { type: 'jpeg', quality: 1 },
+			image: { 
+				type: 'jpeg', 
+				quality: 1
+			},
 			html2canvas: { 
 				scale: 2,
 				useCORS: true,
 				allowTaint: true,
 				foreignObjectRendering: true,
-				logging: true,
-				scrollY: -window.scrollY
+				logging: false,
+				width: 795,
+				height: 1123,
 			},
 			jsPDF: { 
 				unit: 'mm', 
@@ -300,27 +302,23 @@
 			}
 		};
 
+		const isDarkMode = document.body.classList.contains('dark-mode');
 		try {
 			// Remove dark mode if active
-			const isDarkMode = document.body.classList.contains('dark-mode');
 			if (isDarkMode) {
 				document.body.classList.remove('dark-mode');
 			}
 
-			// Generate and download PDF
 			await html2pdf().set(opt).from(element).save();
-
-			// Cleanup
+		} catch (error) {
+			console.error('PDF generation failed:', error);
+			alert('Failed to generate PDF. Please try again.');
+		} finally {
 			element.classList.remove('generating-pdf');
-			
 			// Restore dark mode if it was active
 			if (isDarkMode) {
 				document.body.classList.add('dark-mode');
 			}
-		} catch (error) {
-			console.error('PDF generation failed:', error);
-			alert('Failed to generate PDF. Please try again.');
-			element.classList.remove('generating-pdf');
 		}
 	}
 	</script>

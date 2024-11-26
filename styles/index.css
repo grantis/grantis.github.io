@@ -578,11 +578,38 @@ ul {
     }
 }
 
-/* PDF-specific styles */
-.generating-pdf .profile-image {
-    width: 60px !important;
-    height: 60px !important;
+/* PDF Generation Styles */
+.generating-pdf {
+    background: white !important;
+}
+
+.generating-pdf .page {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 2rem !important;
+    background: white !important;
     box-shadow: none !important;
-    print-color-adjust: exact !important;
+    transform: none !important;
+    position: static !important;
+}
+
+.generating-pdf .header-container {
+    padding: 1rem !important;
+    margin-bottom: 2rem !important;
+    background: none !important;
+    box-shadow: none !important;
+}
+
+.generating-pdf .profile-image {
+    width: 80px !important;
+    height: 80px !important;
+    box-shadow: none !important;
+}
+
+.generating-pdf * {
     -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    transition: none !important;
+    overflow: visible !important;
 }
