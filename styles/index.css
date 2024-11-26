@@ -332,70 +332,84 @@ h1, h2, h3,
 }
 
 @media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+    
     body {
-        background: none;
+        background: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
     
     .page {
-        box-shadow: none;
-        padding: 0;
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 20mm !important;
+        max-width: none !important;
+        background: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        width: 210mm !important;
+        min-height: 297mm !important;
     }
-}
 
-/* Dark mode adjustments */
-.dark-mode .header-container {
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Mobile adjustments */
-@media screen and (max-width: 640px) {
     .header-container {
-        padding: 1rem;
-        gap: 1rem;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: none !important;
     }
 
     .profile-image {
-        width: 80px;
-        height: 80px;
+        box-shadow: none !important;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
     }
 
-    .page-title.name {
-        font-size: 1.25rem;
+    /* Hide elements not needed in print */
+    .download-pdf {
+        display: none !important;
     }
 
-    .page-title.role {
-        font-size: 1rem;
+    /* Ensure dark mode doesn't affect printing */
+    .dark-mode {
+        background: none !important;
+        color: rgb(55, 53, 47) !important;
+    }
+    
+    .dark-mode .page,
+    .dark-mode .header-container,
+    .dark-mode .page-title,
+    .dark-mode h1,
+    .dark-mode h2,
+    .dark-mode h3,
+    .dark-mode .simple-table th,
+    .dark-mode .simple-table td {
+        background: none !important;
+        color: rgb(55, 53, 47) !important;
     }
 
-    .simple-table {
+    .dark-mode .page-title.role {
+        color: rgba(55, 53, 47, 0.8) !important;
+    }
+
+    /* Ensure full content is visible */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
+
+/* Mobile adjustments for download button */
+@media screen and (max-width: 768px) {
+    .download-pdf {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.6rem 1.2rem;
         font-size: 0.85rem;
-    }
-
-    .simple-table th,
-    .simple-table td {
-        padding: 0.5rem;
-    }
-}
-
-/* Tablet and up */
-@media screen and (min-width: 768px) {
-    .header-container {
-        padding: 2rem;
-        gap: 3rem;
-    }
-
-    .profile-image {
-        width: 140px;
-        height: 140px;
-    }
-}
-
-/* Desktop */
-@media screen and (min-width: 1024px) {
-    .profile-image {
-        width: 160px;
-        height: 160px;
     }
 }
 
@@ -447,6 +461,117 @@ h1, h2, h3,
     box-shadow: var(--shadow-md-dark);
 }
 
-.dark-mode .simple-table {
-    /* box-shadow: var(--shadow-sm-dark); */
+/* Download PDF Button */
+.download-pdf {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 0.75rem 1.5rem;
+    background: #0066CC;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+}
+
+.download-pdf:hover {
+    background: #0044AA;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.dark-mode .download-pdf {
+    background: #2997FF;
+}
+
+.dark-mode .download-pdf:hover {
+    background: #47A2FF;
+}
+
+/* Enhanced Print Styles */
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+    
+    body {
+        background: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .page {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 20mm !important;
+        max-width: none !important;
+        background: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        width: 210mm !important;
+        min-height: 297mm !important;
+    }
+
+    .header-container {
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: none !important;
+    }
+
+    .profile-image {
+        box-shadow: none !important;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+    }
+
+    /* Hide elements not needed in print */
+    .download-pdf {
+        display: none !important;
+    }
+
+    /* Ensure dark mode doesn't affect printing */
+    .dark-mode {
+        background: none !important;
+        color: rgb(55, 53, 47) !important;
+    }
+    
+    .dark-mode .page,
+    .dark-mode .header-container,
+    .dark-mode .page-title,
+    .dark-mode h1,
+    .dark-mode h2,
+    .dark-mode h3,
+    .dark-mode .simple-table th,
+    .dark-mode .simple-table td {
+        background: none !important;
+        color: rgb(55, 53, 47) !important;
+    }
+
+    .dark-mode .page-title.role {
+        color: rgba(55, 53, 47, 0.8) !important;
+    }
+
+    /* Ensure full content is visible */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
+
+/* Mobile adjustments for download button */
+@media screen and (max-width: 768px) {
+    .download-pdf {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
 }
