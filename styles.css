@@ -1,0 +1,452 @@
+/* Base Styles */
+html {
+    -webkit-print-color-adjust: exact;
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: #f5f5f7;
+    line-height: 1.5;
+    color: rgb(55, 53, 47);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+a, a.visited {
+    color: #0066CC;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: #0044AA;
+    opacity: 1;
+}
+
+h1, h2, h3 {
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+h1 { font-size: 1.875rem; margin-top: 1.875rem; }
+h2 { font-size: 1.5rem; margin-top: 1.5rem; }
+h2 {
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+    color: rgba(55, 53, 47, 0.9);
+}
+h3 { font-size: 1.25rem; margin-top: 1.25rem; }
+
+/* Page Layout */
+.page {
+    width: 100%;
+    max-width: 800px;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    border-radius: 12px;
+}
+
+.page-body > h2 {
+    padding-bottom: 0.5rem;
+}
+
+.page-body > .contact-header {
+    margin-top: 0;
+}
+
+/* Refined Header Layout */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    min-width: fit-content;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.page-title.name {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.page-title.role {
+    font-size: 1.25rem;
+    color: rgba(55, 53, 47, 0.8);
+    font-weight: 500;
+    margin: 0;
+}
+
+.contact-section {
+    flex: 1;
+    max-width: 450px;
+}
+
+.contact-section .simple-table {
+    margin: 0;
+    width: 100%;
+}
+
+.simple-table th {
+    width: 30%;
+    padding-left: 1.5rem;
+}
+
+.simple-table td {
+    width: 70%;
+    padding-right: 1.5rem;
+    text-align: right;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+}
+
+.profile-image:hover {
+    transform: scale(1.03);
+}
+
+/* Table Styles */
+.simple-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 0.9rem;
+}
+
+.simple-table th,
+.simple-table td {
+    padding: 0.75rem;
+    border: none;
+    word-break: break-word;
+}
+
+.simple-table-header-color {
+    background: rgba(55, 53, 47, 0.03);
+}
+
+.simple-table-header {
+    font-weight: 500;
+}
+
+/* List Styles */
+ul {
+    padding-inline-start: 1.7em;
+}
+
+.bulleted-list {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+.bulleted-list li {
+    position: relative;
+    margin: 0.8rem 0;
+    padding-left: 0.5em;
+    line-height: 1.6;
+}
+
+/* Font Families */
+.sans {
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.code {
+    font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Media Queries */
+@media only screen {
+    body {
+        margin: 1em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Typography adjustments */
+    .page-title { font-size: 2rem; }
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.25rem; }
+    h3 { font-size: 1.1rem; }
+
+    /* Layout adjustments */
+    .page {
+        padding: 1rem;
+    }
+
+    .header-container {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+
+    .profile-section {
+        width: 100%;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .page-title.name {
+        font-size: 1.5rem;
+    }
+
+    .page-title.role {
+        font-size: 1.1rem;
+    }
+
+    .contact-section {
+        width: 100%;
+        max-width: none;
+    }
+
+    .simple-table th,
+    .simple-table td {
+        padding: 0.75rem;
+    }
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background: #000;
+}
+
+.dark-mode .page {
+    background: rgba(28, 28, 30, 0.8);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .profile-image {
+    border-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .page-title,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3 {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.dark-mode .page-title.role {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-mode .simple-table th,
+.dark-mode .simple-table td {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .simple-table-header-color {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .bulleted-list li::before {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-mode a, 
+.dark-mode a:visited {
+    color: #2997FF;
+}
+
+.dark-mode a:hover {
+    color: #47A2FF;
+}
+
+/* Adjust dark mode transitions */
+.page,
+.profile-image,
+.simple-table,
+a,
+h1, h2, h3,
+.page-title,
+.page-title.name,
+.page-title.role,
+.simple-table th,
+.simple-table td {
+    transition: all 0.3s ease;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .page {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+@media print {
+    body {
+        background: none;
+    }
+    
+    .page {
+        box-shadow: none;
+        padding: 0;
+    }
+}
+
+/* Dark mode adjustments */
+.dark-mode .header-container {
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 640px) {
+    .header-container {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .profile-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .page-title.name {
+        font-size: 1.25rem;
+    }
+
+    .page-title.role {
+        font-size: 1rem;
+    }
+
+    .simple-table {
+        font-size: 0.85rem;
+    }
+
+    .simple-table th,
+    .simple-table td {
+        padding: 0.5rem;
+    }
+}
+
+/* Tablet and up */
+@media screen and (min-width: 768px) {
+    .header-container {
+        padding: 2rem;
+        gap: 3rem;
+    }
+
+    .profile-image {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+    .profile-image {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+/* CSS Custom Properties for Shadows and Effects */
+:root {
+    /* Box Shadows */
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.1);
+    
+    /* Dark Mode Shadows */
+    --shadow-sm-dark: 0 2px 8px rgba(0, 0, 0, 0.2);
+    --shadow-md-dark: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-lg-dark: 0 8px 24px rgba(0, 0, 0, 0.4);
+    
+    /* Blur Effects */
+    --blur-sm: blur(10px);
+    --blur-md: blur(20px);
+    --blur-lg: blur(30px);
+}
+
+/* Apply consistent shadows */
+.page {
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: var(--blur-md);
+    -webkit-backdrop-filter: var(--blur-md);
+}
+
+.header-container {
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: var(--blur-sm);
+    -webkit-backdrop-filter: var(--blur-sm);
+}
+
+.profile-image {
+    box-shadow: var(--shadow-md);
+}
+
+/* Dark Mode Shadow Adjustments */
+.dark-mode .page {
+    box-shadow: var(--shadow-lg-dark);
+}
+
+.dark-mode .header-container {
+    box-shadow: var(--shadow-sm-dark);
+}
+
+.dark-mode .profile-image {
+    box-shadow: var(--shadow-md-dark);
+}
+
+.dark-mode .simple-table {
+    /* box-shadow: var(--shadow-sm-dark); */
+}
