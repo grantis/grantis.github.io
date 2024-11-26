@@ -10,6 +10,20 @@
     --color-link-dark: #2997FF;
     --color-link-hover-dark: #47A2FF;
     
+    /* Highlight Colors - Light Mode */
+    --highlight-yellow: rgba(255, 214, 0, 0.3);
+    --highlight-green: rgba(68, 201, 155, 0.3);
+    --highlight-blue: rgba(35, 131, 226, 0.3);
+    --highlight-pink: rgba(255, 124, 184, 0.3);
+    --highlight-purple: rgba(155, 93, 247, 0.3);
+
+    /* Highlight Colors - Dark Mode */
+    --highlight-yellow-dark: rgba(255, 214, 0, 0.8);
+    --highlight-green-dark: rgba(68, 201, 155, 0.8);
+    --highlight-blue-dark: rgba(35, 131, 226, 0.8);
+    --highlight-pink-dark: rgba(255, 124, 184, 0.8);
+    --highlight-purple-dark: rgba(155, 93, 247, 0.8);
+    
     /* Typography */
     --font-sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif;
     --font-mono: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
@@ -508,3 +522,57 @@ ul {
 .dark-mode .profile-image {
     box-shadow: var(--shadow-md-dark);
 }
+
+.highlight {
+    position: relative;
+    font-style: italic;
+    z-index: 1;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    bottom: 0;
+    height: 0.4em;
+    background-color: rgba(255, 214, 0, 0.4);  /* Light yellow highlight */
+    z-index: -1;
+    transform: skew(-12deg);  /* Adds italic slant to the highlight */
+}
+
+/* Dark mode variant */
+.dark-mode .highlight::after {
+    background-color: rgba(255, 214, 0, 0.5);  /* Slightly darker for dark mode */
+}
+
+/* Base highlight classes */
+.highlight-yellow, .highlight-green, .highlight-blue, .highlight-pink, .highlight-purple {
+    position: relative;
+    z-index: 1;
+}
+
+.highlight-yellow::after { background-color: var(--highlight-yellow); }
+.highlight-green::after { background-color: var(--highlight-green); }
+.highlight-blue::after { background-color: var(--highlight-blue); }
+.highlight-pink::after { background-color: var(--highlight-pink); }
+.highlight-purple::after { background-color: var(--highlight-purple); }
+
+/* Common highlight styles */
+[class^="highlight-"]::after {
+    content: '';
+    position: absolute;
+    left: -6px;
+    right: -6px;
+    bottom: 0;
+    height: 1em;
+    z-index: -1;
+    transform: skew(-12deg);
+}
+
+/* Dark mode variants */
+.dark-mode .highlight-yellow::after { background-color: var(--highlight-yellow-dark); }
+.dark-mode .highlight-green::after { background-color: var(--highlight-green-dark); }
+.dark-mode .highlight-blue::after { background-color: var(--highlight-blue-dark); }
+.dark-mode .highlight-pink::after { background-color: var(--highlight-pink-dark); }
+.dark-mode .highlight-purple::after { background-color: var(--highlight-purple-dark); }
