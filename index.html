@@ -51,7 +51,7 @@
 								</tr>
 								<tr>
 									<th class="simple-table-header-color simple-table-header">Email</th>
-									<td><a href="mailto:grantrigby1992@gmail.com">grantrigby1992</a></td>
+									<td><a href="mailto:grantrigby1992@gmail.com">grantrigby1992@gmail.com</a></td>
 								</tr>
 								<tr>
 									<th class="simple-table-header-color simple-table-header">Socials</th>
@@ -271,6 +271,48 @@
 		if (localStorage.getItem('darkMode') === 'true') {
 			document.body.classList.add('dark-mode');
 		}
+	</script>
+	<button onclick="generatePDF()" class="download-pdf">Download PDF</button>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+	<script>
+	async function generatePDF() {
+		const element = document.querySelector('.page');
+		const opt = {
+			margin: [10, 10],
+			filename: 'grant-rigby-resume.pdf',
+			image: { type: 'jpeg', quality: 1 },
+			html2canvas: { 
+				scale: 2,
+				useCORS: true,
+				logging: true,
+				scrollY: -window.scrollY
+			},
+			jsPDF: { 
+				unit: 'mm', 
+				format: 'a4', 
+				orientation: 'portrait'
+			}
+		};
+
+		try {
+			// Remove dark mode if active
+			const isDarkMode = document.body.classList.contains('dark-mode');
+			if (isDarkMode) {
+				document.body.classList.remove('dark-mode');
+			}
+
+			// Generate and download PDF
+			await html2pdf().set(opt).from(element).save();
+
+			// Restore dark mode if it was active
+			if (isDarkMode) {
+				document.body.classList.add('dark-mode');
+			}
+		} catch (error) {
+			console.error('PDF generation failed:', error);
+			alert('Failed to generate PDF. Please try again.');
+		}
+	}
 	</script>
 </body>
 
