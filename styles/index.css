@@ -467,103 +467,32 @@ h1, h2, h3,
     bottom: 2rem;
     right: 2rem;
     padding: 0.75rem 1.5rem;
-    background: #0066CC;
-    color: white;
+    background: var(--color-link, #0066CC);
+    color: var(--color-white, #fff);
     border: none;
-    border-radius: 12px;
+    border-radius: var(--radius-sm, 12px);
     cursor: pointer;
-    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
+    font-family: var(--font-sans, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif);
+    font-size: var(--font-size-sm, 0.9rem);
+    font-weight: var(--font-weight-medium, 500);
+    transition: var(--transition-base, all 0.3s ease);
     box-shadow: var(--shadow-sm);
     z-index: 1000;
 }
 
 .download-pdf:hover {
-    background: #0044AA;
+    background: var(--color-link-hover, #0044AA);
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
 }
 
+/* Dark mode styles for the button */
 .dark-mode .download-pdf {
-    background: #2997FF;
+    background: var(--color-link-dark, #2997FF);
 }
 
 .dark-mode .download-pdf:hover {
-    background: #47A2FF;
-}
-
-/* Enhanced Print Styles */
-@media print {
-    @page {
-        size: A4;
-        margin: 0;
-    }
-    
-    body {
-        background: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    .page {
-        box-shadow: none !important;
-        margin: 0 !important;
-        padding: 20mm !important;
-        max-width: none !important;
-        background: none !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        width: 210mm !important;
-        min-height: 297mm !important;
-    }
-
-    .header-container {
-        box-shadow: none !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        background: none !important;
-    }
-
-    .profile-image {
-        box-shadow: none !important;
-        print-color-adjust: exact !important;
-        -webkit-print-color-adjust: exact !important;
-    }
-
-    /* Hide elements not needed in print */
-    .download-pdf {
-        display: none !important;
-    }
-
-    /* Ensure dark mode doesn't affect printing */
-    .dark-mode {
-        background: none !important;
-        color: rgb(55, 53, 47) !important;
-    }
-    
-    .dark-mode .page,
-    .dark-mode .header-container,
-    .dark-mode .page-title,
-    .dark-mode h1,
-    .dark-mode h2,
-    .dark-mode h3,
-    .dark-mode .simple-table th,
-    .dark-mode .simple-table td {
-        background: none !important;
-        color: rgb(55, 53, 47) !important;
-    }
-
-    .dark-mode .page-title.role {
-        color: rgba(55, 53, 47, 0.8) !important;
-    }
-
-    /* Ensure full content is visible */
-    * {
-        -webkit-print-color-adjust: exact !important;
-        color-adjust: exact !important;
-        print-color-adjust: exact !important;
-    }
+    background: var(--color-link-hover-dark, #47A2FF);
 }
 
 /* Mobile adjustments for download button */
@@ -572,6 +501,13 @@ h1, h2, h3,
         bottom: 1rem;
         right: 1rem;
         padding: 0.6rem 1.2rem;
-        font-size: 0.85rem;
+        font-size: var(--font-size-xs, 0.85rem);
+    }
+}
+
+/* Print styles for download button */
+@media print {
+    .download-pdf {
+        display: none !important;
     }
 }
