@@ -1,3 +1,49 @@
+:root {
+    /* Colors */
+    --color-text: rgb(55, 53, 47);
+    --color-text-secondary: rgba(55, 53, 47, 0.8);
+    --color-text-tertiary: rgba(55, 53, 47, 0.6);
+    --color-background: #f5f5f7;
+    --color-white: #fff;
+    --color-link: #0066CC;
+    --color-link-hover: #0044AA;
+    --color-link-dark: #2997FF;
+    --color-link-hover-dark: #47A2FF;
+    
+    /* Typography */
+    --font-sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif;
+    --font-mono: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+    --font-size-xs: 0.85rem;
+    --font-size-sm: 0.9rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 1.875rem;
+    --font-size-3xl: 2rem;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-base: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 2.5rem;
+    
+    /* Effects */
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.1);
+    --shadow-sm-dark: 0 2px 8px rgba(0, 0, 0, 0.2);
+    --shadow-md-dark: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-lg-dark: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --blur-sm: blur(10px);
+    --blur-md: blur(20px);
+    --blur-lg: blur(30px);
+    --transition-base: all 0.3s ease;
+    --radius-sm: 12px;
+    --radius-md: 20px;
+}
+
 /* Base Styles */
 html {
     -webkit-print-color-adjust: exact;
@@ -78,7 +124,6 @@ h3 { font-size: 1.25rem; margin-top: 1.25rem; }
     align-items: center;
     gap: 3rem;
     padding: 2.5rem;
-    background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
@@ -216,13 +261,61 @@ ul {
     to { opacity: 1; }
 }
 
-/* Media Queries */
-@media only screen {
-    body {
-        margin: 1em;
-    }
+/* Dark Mode Styles - Keep these before media queries */
+.dark-mode {
+    background: #000;
 }
 
+.dark-mode .page {
+    background: rgba(28, 28, 30, 0.8);
+    box-shadow: var(--shadow-lg-dark);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .header-container {
+    background: rgba(28, 28, 30, 0.5);
+    box-shadow: var(--shadow-sm-dark);
+}
+
+.dark-mode .profile-image {
+    border-color: white;
+    box-shadow: var(--shadow-md-dark);
+}
+
+.dark-mode .page-title,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3 {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.dark-mode .page-title.role {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-mode .simple-table th,
+.dark-mode .simple-table td {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .simple-table-header-color {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .bulleted-list li::before {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-mode a, 
+.dark-mode a:visited {
+    color: var(--color-link-dark);
+}
+
+.dark-mode a:hover {
+    color: var(--color-link-hover-dark);
+}
+
+/* Consolidated Media Queries */
 @media screen and (max-width: 768px) {
     /* Typography adjustments */
     .page-title { font-size: 2rem; }
@@ -264,83 +357,27 @@ ul {
         max-width: none;
     }
 
+    /* Table adjustments */
+    .simple-table {
+        font-size: 0.85rem;
+    }
+
     .simple-table th,
     .simple-table td {
-        padding: 0.75rem;
+        padding: 0.5rem;
+        white-space: nowrap;
+    }
+
+    /* Download button adjustments */
+    .download-pdf {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.6rem 1.2rem;
+        font-size: var(--font-size-xs);
     }
 }
 
-/* Dark Mode Styles */
-.dark-mode {
-    background: #000;
-}
-
-.dark-mode .page {
-    background: rgba(28, 28, 30, 0.8);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.dark-mode .profile-image {
-    border-color: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.dark-mode .page-title,
-.dark-mode h1,
-.dark-mode h2,
-.dark-mode h3 {
-    color: rgba(255, 255, 255, 0.95);
-}
-
-.dark-mode .page-title.role {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.dark-mode .simple-table th,
-.dark-mode .simple-table td {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.dark-mode .simple-table-header-color {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.dark-mode .bulleted-list li::before {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.dark-mode a, 
-.dark-mode a:visited {
-    color: #2997FF;
-}
-
-.dark-mode a:hover {
-    color: #47A2FF;
-}
-
-/* Adjust dark mode transitions */
-.page,
-.profile-image,
-.simple-table,
-a,
-h1, h2, h3,
-.page-title,
-.page-title.name,
-.page-title.role,
-.simple-table th,
-.simple-table td {
-    transition: all 0.3s ease;
-}
-
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-    .page {
-        animation: none;
-        opacity: 1;
-    }
-}
-
+/* Consolidated Print Styles */
 @media print {
     @page {
         size: A4;
@@ -378,17 +415,29 @@ h1, h2, h3,
         -webkit-print-color-adjust: exact !important;
     }
 
-    /* Hide elements not needed in print */
+    /* Table styles */
+    .contact-section {
+        width: 100%;
+    }
+
+    .simple-table {
+        page-break-inside: avoid;
+        width: 100%;
+    }
+
+    .simple-table th,
+    .simple-table td {
+        padding: 0.5rem 1rem;
+        white-space: nowrap;
+    }
+
+    /* Hide download button */
     .download-pdf {
         display: none !important;
     }
 
-    /* Ensure dark mode doesn't affect printing */
-    .dark-mode {
-        background: none !important;
-        color: rgb(55, 53, 47) !important;
-    }
-    
+    /* Dark mode print overrides */
+    .dark-mode,
     .dark-mode .page,
     .dark-mode .header-container,
     .dark-mode .page-title,
@@ -410,16 +459,6 @@ h1, h2, h3,
         -webkit-print-color-adjust: exact !important;
         color-adjust: exact !important;
         print-color-adjust: exact !important;
-    }
-}
-
-/* Mobile adjustments for download button */
-@media screen and (max-width: 768px) {
-    .download-pdf {
-        bottom: 1rem;
-        right: 1rem;
-        padding: 0.6rem 1.2rem;
-        font-size: 0.85rem;
     }
 }
 
@@ -536,30 +575,6 @@ h1, h2, h3,
     .simple-table th,
     .simple-table td {
         padding: 0.5rem 1rem;
-        white-space: nowrap;
-    }
-}
-
-/* Mobile adjustments */
-@media screen and (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        padding: 1.5rem;
-        gap: 2rem;
-        align-items: flex-start;
-    }
-
-    .contact-section {
-        width: 100%;
-    }
-
-    .simple-table {
-        font-size: 0.85rem;
-    }
-
-    .simple-table th,
-    .simple-table td {
-        padding: 0.5rem;
         white-space: nowrap;
     }
 }
