@@ -9,7 +9,7 @@
     --color-link-hover: #0044AA;
     --color-link-dark: #2997FF;
     --color-link-hover-dark: #47A2FF;
-    
+
     /* Highlight Colors - Light Mode */
     --highlight-yellow: rgba(255, 214, 0, 0.3);
     --highlight-green: rgba(68, 201, 155, 0.3);
@@ -23,7 +23,7 @@
     --highlight-blue-dark: rgba(35, 131, 226, 0.8);
     --highlight-pink-dark: rgba(255, 124, 184, 0.8);
     --highlight-purple-dark: rgba(155, 93, 247, 0.8);
-    
+
     /* Typography */
     --font-sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif;
     --font-mono: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
@@ -34,7 +34,7 @@
     --font-size-xl: 1.5rem;
     --font-size-2xl: 1.875rem;
     --font-size-3xl: 2rem;
-    
+
     /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 0.75rem;
@@ -42,7 +42,7 @@
     --spacing-lg: 1.5rem;
     --spacing-xl: 2rem;
     --spacing-2xl: 2.5rem;
-    
+
     /* Effects */
     --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -84,7 +84,8 @@ body {
 }
 
 /* Typography */
-a, a.visited {
+a,
+a.visited {
     color: #0066CC;
     text-decoration: none;
     transition: all 0.2s ease;
@@ -95,21 +96,36 @@ a:hover {
     opacity: 1;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     letter-spacing: -0.01em;
     line-height: 1.2;
     font-weight: 600;
     margin-bottom: 0;
 }
 
-h1 { font-size: 1.875rem; margin-top: 1.875rem; }
-h2 { font-size: 1.5rem; margin-top: 1.5rem; }
+h1 {
+    font-size: 1.875rem;
+    margin-top: 1.875rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+
 h2 {
     padding-bottom: 0.5rem;
     margin-top: 2rem;
     color: rgba(55, 53, 47, 0.9);
 }
-h3 { font-size: 1.25rem; margin-top: 1.25rem; }
+
+h3 {
+    font-size: 1.25rem;
+    margin-top: 1.25rem;
+    padding-bottom: 0.5rem;
+}
 
 /* Page Layout */
 .page {
@@ -122,11 +138,11 @@ h3 { font-size: 1.25rem; margin-top: 1.25rem; }
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
 }
 
-.page-body > h2 {
+.page-body>h2 {
     padding-bottom: 0.5rem;
 }
 
-.page-body > .contact-header {
+.page-body>.contact-header {
     margin-top: 0;
 }
 
@@ -249,12 +265,11 @@ ul {
 
 .bulleted-list {
     padding-left: 1.5rem;
-    margin: 1rem 0;
+    margin: 0;
 }
 
 .bulleted-list li {
     position: relative;
-    margin: 0.8rem 0;
     padding-left: 0.5em;
     line-height: 1.6;
 }
@@ -270,8 +285,13 @@ ul {
 
 /* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* Dark Mode Styles - Keep these before media queries */
@@ -319,7 +339,7 @@ ul {
     color: rgba(255, 255, 255, 0.6);
 }
 
-.dark-mode a, 
+.dark-mode a,
 .dark-mode a:visited {
     color: var(--color-link-dark);
 }
@@ -330,11 +350,23 @@ ul {
 
 /* Consolidated Media Queries */
 @media screen and (max-width: 768px) {
+
     /* Typography adjustments */
-    .page-title { font-size: 2rem; }
-    h1 { font-size: 1.5rem; }
-    h2 { font-size: 1.25rem; }
-    h3 { font-size: 1.1rem; }
+    .page-title {
+        font-size: 2rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
 
     /* Layout adjustments */
     .page {
@@ -392,64 +424,104 @@ ul {
 
 /* Consolidated Print Styles */
 @media print {
+    /* Reset all print-specific styles */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        forced-color-adjust: none !important;
+    }
+
+    /* Page setup */
     @page {
         size: A4;
-        margin: 0;
+        margin: 20mm;
     }
-    
+
     body {
         background: none !important;
-        margin: 0 !important;
         padding: 0 !important;
-    }
-    
-    .page {
-        box-shadow: none !important;
         margin: 0 !important;
-        padding: 20mm !important;
-        max-width: none !important;
-        background: none !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        width: 210mm !important;
-        min-height: 297mm !important;
     }
 
+    /* Header container specific styles */
     .header-container {
-        box-shadow: none !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 3rem !important;
+        padding: 2.5rem !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
         background: none !important;
+        box-shadow: none !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
     }
 
+    /* Profile section styles */
+    .profile-section {
+        display: flex !important;
+        align-items: center !important;
+        gap: 2rem !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* Image specific styles */
     .profile-image {
+        width: 120px !important;
+        height: 120px !important;
+        display: block !important;
+        visibility: visible !important;
+        border-radius: 50% !important;
+        object-fit: cover !important;
+        border: 3px solid black !important;
         box-shadow: none !important;
+        /* Force image rendering */
+        image-rendering: -webkit-optimize-contrast !important;
+        image-rendering: crisp-edges !important;
+        /* Ensure image prints */
         print-color-adjust: exact !important;
         -webkit-print-color-adjust: exact !important;
+        forced-color-adjust: none !important;
+        content-visibility: visible !important;
+        opacity: 1 !important;
     }
 
-    /* Table styles */
+    /* Contact section styles */
     .contact-section {
-        width: 100%;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
     }
 
+    /* Table styles for print */
     .simple-table {
-        page-break-inside: avoid;
-        width: 100%;
+        width: 100% !important;
+        border-collapse: collapse !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
     }
 
     .simple-table th,
     .simple-table td {
-        padding: 0.5rem 1rem;
-        white-space: nowrap;
+        padding: 0.75rem 1rem !important;
+        text-align: left !important;
+        border: none !important;
+        background: none !important;
     }
 
-    /* Hide download button */
-    .download-pdf {
-        display: none !important;
+    /* Remove any hover effects and transitions for print */
+    a, 
+    a:hover,
+    .profile-image:hover {
+        text-decoration: none !important;
+        transform: none !important;
+        transition: none !important;
+        color: black !important;
     }
 
-    /* Dark mode print overrides */
+    /* Ensure dark mode doesn't affect print */
     .dark-mode,
     .dark-mode .page,
     .dark-mode .header-container,
@@ -458,20 +530,13 @@ ul {
     .dark-mode h2,
     .dark-mode h3,
     .dark-mode .simple-table th,
-    .dark-mode .simple-table td {
+    .dark-mode .simple-table td,
+    .dark-mode a {
         background: none !important;
-        color: rgb(55, 53, 47) !important;
-    }
-
-    .dark-mode .page-title.role {
-        color: rgba(55, 53, 47, 0.8) !important;
-    }
-
-    /* Ensure full content is visible */
-    * {
-        -webkit-print-color-adjust: exact !important;
-        color-adjust: exact !important;
-        print-color-adjust: exact !important;
+        color: black !important;
+        box-shadow: none !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
     }
 }
 
@@ -481,12 +546,12 @@ ul {
     --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.1);
-    
+
     /* Dark Mode Shadows */
     --shadow-sm-dark: 0 2px 8px rgba(0, 0, 0, 0.2);
     --shadow-md-dark: 0 4px 16px rgba(0, 0, 0, 0.3);
     --shadow-lg-dark: 0 8px 24px rgba(0, 0, 0, 0.4);
-    
+
     /* Blur Effects */
     --blur-sm: blur(10px);
     --blur-md: blur(20px);
@@ -536,27 +601,48 @@ ul {
     right: -2px;
     bottom: 0;
     height: 0.4em;
-    background-color: rgba(255, 214, 0, 0.4);  /* Light yellow highlight */
+    background-color: rgba(255, 214, 0, 0.4);
+    /* Light yellow highlight */
     z-index: -1;
-    transform: skew(-12deg);  /* Adds italic slant to the highlight */
+    transform: skew(-12deg);
+    /* Adds italic slant to the highlight */
 }
 
 /* Dark mode variant */
 .dark-mode .highlight::after {
-    background-color: rgba(255, 214, 0, 0.5);  /* Slightly darker for dark mode */
+    background-color: rgba(255, 214, 0, 0.5);
+    /* Slightly darker for dark mode */
 }
 
 /* Base highlight classes */
-.highlight-yellow, .highlight-green, .highlight-blue, .highlight-pink, .highlight-purple {
+.highlight-yellow,
+.highlight-green,
+.highlight-blue,
+.highlight-pink,
+.highlight-purple {
     position: relative;
     z-index: 1;
 }
 
-.highlight-yellow::after { background-color: var(--highlight-yellow); }
-.highlight-green::after { background-color: var(--highlight-green); }
-.highlight-blue::after { background-color: var(--highlight-blue); }
-.highlight-pink::after { background-color: var(--highlight-pink); }
-.highlight-purple::after { background-color: var(--highlight-purple); }
+.highlight-yellow::after {
+    background-color: var(--highlight-yellow);
+}
+
+.highlight-green::after {
+    background-color: var(--highlight-green);
+}
+
+.highlight-blue::after {
+    background-color: var(--highlight-blue);
+}
+
+.highlight-pink::after {
+    background-color: var(--highlight-pink);
+}
+
+.highlight-purple::after {
+    background-color: var(--highlight-purple);
+}
 
 /* Common highlight styles */
 [class^="highlight-"]::after {
@@ -571,8 +657,89 @@ ul {
 }
 
 /* Dark mode variants */
-.dark-mode .highlight-yellow::after { background-color: var(--highlight-yellow-dark); }
-.dark-mode .highlight-green::after { background-color: var(--highlight-green-dark); }
-.dark-mode .highlight-blue::after { background-color: var(--highlight-blue-dark); }
-.dark-mode .highlight-pink::after { background-color: var(--highlight-pink-dark); }
-.dark-mode .highlight-purple::after { background-color: var(--highlight-purple-dark); }
+.dark-mode .highlight-yellow::after {
+    background-color: var(--highlight-yellow-dark);
+}
+
+.dark-mode .highlight-green::after {
+    background-color: var(--highlight-green-dark);
+}
+
+.dark-mode .highlight-blue::after {
+    background-color: var(--highlight-blue-dark);
+}
+
+.dark-mode .highlight-pink::after {
+    background-color: var(--highlight-pink-dark);
+}
+
+.dark-mode .highlight-purple::after {
+    background-color: var(--highlight-purple-dark);
+}
+
+.blurred-cell {
+    position: relative;
+    overflow: hidden;
+}
+
+.blurred-content {
+    filter: blur(5px);
+    user-select: none;
+    opacity: 0.3;
+}
+
+.blur-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(var(--color-background-rgb), 0.7);
+    font-size: 0.9em;
+    color: var(--color-link);
+    cursor: default;
+}
+
+/* Optional: Add hover effect */
+.blur-overlay:hover {
+    background-color: rgba(var(--color-background-rgb), 0.8);
+}
+
+.blur-overlay-link {
+    color: inherit;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.blur-overlay-link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: inherit;
+}
+
+.dark-mode .blur-overlay-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Add after your existing table styles */
+.contact-section .simple-table a {
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.contact-section .simple-table a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--color-link);
+}
+
+/* Dark mode variant */
+.dark-mode .contact-section .simple-table a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-link-dark);
+}
