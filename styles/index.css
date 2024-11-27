@@ -470,23 +470,42 @@ ul {
 
     /* Image specific styles */
     .profile-image {
-        width: 120px !important;
-        height: 120px !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        forced-color-adjust: none !important;
+        
+        /* Force visibility */
         display: block !important;
         visibility: visible !important;
+        opacity: 1 !important;
+        
+        /* Positioning */
+        position: relative !important;
+        z-index: 9999 !important;
+        
+        /* Dimensions */
+        width: 120px !important;
+        height: 120px !important;
+        min-width: 120px !important;
+        min-height: 120px !important;
+        
+        /* Appearance */
         border-radius: 50% !important;
         object-fit: cover !important;
         border: 3px solid black !important;
-        box-shadow: none !important;
-        /* Force image rendering */
-        image-rendering: -webkit-optimize-contrast !important;
-        image-rendering: crisp-edges !important;
-        /* Ensure image prints */
-        print-color-adjust: exact !important;
-        -webkit-print-color-adjust: exact !important;
-        forced-color-adjust: none !important;
-        content-visibility: visible !important;
-        opacity: 1 !important;
+        
+        /* Remove any transforms or filters */
+        transform: none !important;
+        filter: none !important;
+        
+        /* Prevent breaking */
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+        
+        /* Force hardware acceleration */
+        transform: translateZ(0) !important;
+        backface-visibility: hidden !important;
+        perspective: 1000 !important;
     }
 
     /* Contact section styles */
@@ -537,6 +556,17 @@ ul {
         box-shadow: none !important;
         -webkit-backdrop-filter: none !important;
         backdrop-filter: none !important;
+    }
+
+    /* Ensure container doesn't break */
+    .profile-section {
+        display: flex !important;
+        align-items: center !important;
+        gap: 2rem !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+        position: relative !important;
+        z-index: 9998 !important;
     }
 }
 
@@ -727,7 +757,6 @@ ul {
 
 /* Add after your existing table styles */
 .contact-section .simple-table a {
-    padding: 0.5em 1em;
     border-radius: 4px;
     transition: all 0.2s ease;
     display: inline-block;
